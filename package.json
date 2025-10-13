@@ -1,0 +1,43 @@
+{
+	"name": "franken-feed-backend",
+	"version": "1.0.0",
+	"main": "program.js",
+	"type": "module",
+	"scripts": {
+		"clear": "npx rimraf dist",
+		"build": "npm run clear && tsc",
+		"dev": "nodemon --watch src --exec npx tsx src/program.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/VonRiddarn/franken-feed-backend.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/VonRiddarn/franken-feed-backend/issues"
+	},
+	"homepage": "https://github.com/VonRiddarn/franken-feed-backend#readme",
+	"description": "",
+	"devDependencies": {
+		"@types/bcrypt": "^6.0.0",
+		"@types/dotenv": "^6.1.1",
+		"@types/express": "^5.0.3",
+		"@types/node": "^24.7.2",
+		"@types/pg": "^8.15.5",
+		"drizzle-kit": "^0.31.5",
+		"express": "^5.1.0",
+		"nodemon": "^3.1.10",
+		"rimraf": "^6.0.1",
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"bcrypt": "^6.0.0",
+		"dotenv": "^17.2.3",
+		"drizzle-orm": "^0.44.6",
+		"http-status-codes": "^2.3.0",
+		"pg": "^8.16.3"
+	}
+}
