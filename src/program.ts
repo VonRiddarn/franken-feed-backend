@@ -15,7 +15,7 @@ const server = app.listen(process.env.PORT, startMessage);
 // Methods
 function startMessage() {
 	console.log("\nServer is now operating.");
-	console.log(`Runniong on:\thttp://localhost:${process.env.PORT}`);
+	console.log(`Running on:\thttp://localhost:${process.env.PORT}`);
 }
 
 async function shutdown() {
