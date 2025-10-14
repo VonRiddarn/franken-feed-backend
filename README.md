@@ -4,16 +4,30 @@ The spookiest social network to ever roam the internet.
 
 ## How to use 🤔
 
-0️⃣ Download and launch a docker container following [this tutorial](https://orm.drizzle.team/docs/guides/postgresql-local-setup).
+### Download the project
+
 1️⃣ Clone the repo using `git clone link-to-repo`  
-2️⃣ Install dependencies with `npm i`  
-3️⃣ Create an environment file called `.env` in the root directory and add your `DATABASE_URL` and `PORT` variables.  
-_Varies depending on your Postgre host location, but:_  
-For local hosting: `DATABASE_URL=DATABASE_URL=postgres://postgres:my-secret-password@localhost:5432/postgres` is the default.  
-4️⃣ Run `npx drizzle-kit push` to create tables in your database (note: proper migrations are not set up yet).  
-5️⃣ Start the project using `npm run dev`  
-_This starts a developer environment using `tsx` and `nodemon`._  
-6️⃣ (Optional) Run `tsc` to transpile the project into `./dist`
+2️⃣ Install dependencies with `npm i` (Requires [Node](https://nodejs.org/en) to be installed on your system)
+
+### Setup Docker
+
+1️⃣ Download and install [Docker](https://www.docker.com/) for your operating system.  
+2️⃣ Run the command: `docker run --name drizzle-postgres -e POSTGRES_PASSWORD=your_password_here -d -p 5431:5432 postgres`  
+_Make sure to replace `your_password_here` with an individual password for your container_  
+3️⃣ Add the following line to your `.env` file: `DATABASE_URL=postgres://postgres:your_password_here@localhost:5431/postgres`  
+_Make sure to replace `your_password_here` with the password you chose when setting up your container_  
+4️⃣ If you restart your computer, or you face problems when making contact with the DB: Make sure the container is still running.
+
+### Setup the project
+
+1️⃣ Ensure a `.env` file exists in the root directory and contains:
+
+-   `DATABASE_URL`
+-   `PORT`
+
+2️⃣ Run `npx drizzle-kit push` to create tables in your database (note: proper migrations are not set up yet).  
+3️⃣ Start a hot-reload environment of the project using `npm run dev`  
+4️⃣ (Optional) Run `tsc` to transpile the project into `./dist`
 
 ## Extra resources 💡
 
