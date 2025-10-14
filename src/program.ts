@@ -1,7 +1,9 @@
 import "dotenv/config";
 import express from "express";
+import { attachApiResponse } from "./middleware/ExtendResponse.ts";
 
 const app = express();
+app.use(attachApiResponse);
 app.use(express.json());
 
 const server = app.listen(process.env.PORT, startMessage);
