@@ -2,11 +2,17 @@ import "dotenv/config";
 import express from "express";
 import { attachApiResponse } from "./middleware/ExtendResponse.ts";
 import { userRouter, USERS_ROOT } from "./controllers/userEndpoints.ts";
+import { postRouter, POSTS_ROOT } from "./controllers/postEndpoints.ts";
+import { commentRouter, COMMENTS_ROOT } from "./controllers/commentEndpoints.ts";
+import { likeRouter } from "./controllers/likeEndpoints.ts";
 
 const app = express();
 app.use(attachApiResponse);
 app.use(express.json());
 app.use(USERS_ROOT, userRouter);
+app.use(POSTS_ROOT, postRouter);
+app.use(COMMENTS_ROOT, commentRouter);
+app.use("/", likeRouter);
 
 const server = app.listen(process.env.PORT, startMessage);
 
